@@ -1,0 +1,37 @@
+<template>
+    <div class="slds-align_absolute-center slds-m-around_medium slds-p-around_medium">
+        <div class="slds-box slds-box_x-small slds-text-align_center slds-p-around_small">
+
+            <!-- MI Section -->
+            <template if:true={miPlayers}>
+                <h2 class="slds-text-heading_small slds-m-bottom_small"><strong>MI Players</strong></h2>
+                <lightning-carousel class="slds-p-around_x-small slds-m-around_x-small">
+                    <template for:each={miPlayers} for:item="player">
+                        <lightning-carousel-image
+                            key={player.Id}
+                            src={player.imgSrc}
+                            header={player.name}
+                            description={player.description}>
+                        </lightning-carousel-image>
+                    </template>
+                </lightning-carousel>
+            </template>
+
+            <!-- CSK Section -->
+            <template if:true={cskPlayers}>
+                <h2 class="slds-text-heading_small slds-m-top_medium slds-m-bottom_small"><strong>CSK Players</strong></h2>
+                <lightning-carousel class="slds-p-around_x-small slds-m-around_x-small">
+                    <template for:each={cskPlayers} for:item="player">
+                        <lightning-carousel-image
+                            key={player.Id}
+                            src={player.imgSrc}
+                            header={player.name}
+                            description={player.description}>
+                        </lightning-carousel-image>
+                    </template>
+                </lightning-carousel>
+            </template>
+
+        </div>
+    </div>
+</template>
